@@ -2,7 +2,7 @@ package com.tt1.test;
 
 import java.util.Map;
 
-public class IDBStub implements IDB {
+public class DBStub implements IDB {
     private Map<Integer,ToDo> tabla;
 
 
