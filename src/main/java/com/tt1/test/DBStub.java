@@ -25,4 +25,30 @@ public class DBStub implements IDB {
     public Integer createTodo(ToDo todo) {
         throw new UnsupportedOperationException("Clase no implementada aún");
     }
+
+    // Email
+    @Override
+    List<String> getEmails() {
+        throw new UnsupportedOperationException("Clase no implementada aún");
+    }
+
+    @Override
+    String getEmail(Integer id) {
+        throw new UnsupportedOperationException("Clase no implementada aún");
+    }
+
+    @Override
+    void updateEmail(Integer id, String email) {
+        throw new UnsupportedOperationException("Clase no implementada aún");
+    }
+
+    @Override
+    void deleteEmail(Integer id) {
+        throw new UnsupportedOperationException("Clase no implementada aún");
+    }
+
+    @Override
+    Integer createEmail(String email ) {
+        throw new UnsupportedOperationException("Clase no implementada aún");
+    }
 }

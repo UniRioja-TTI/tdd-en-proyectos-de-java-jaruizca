@@ -2,6 +2,8 @@ package com.tt1.test;
 
 public class Repositorio implements IRepositorio {
 
+    public Repositorio(IDB db) { }
+
     public ToDo obtenerTodo(Integer i) {
         throw new UnsupportedOperationException("Clase no implementada aún");
     }
