@@ -1,5 +1,6 @@
 package com.tt1.test;
 
+import java.util.List;
 import java.util.Map;
 
 public class DBStub implements IDB {
@@ -28,27 +29,27 @@ public class DBStub implements IDB {
 
     // Email
     @Override
-    List<String> getEmails() {
+    public List<String> getEmails() {
         throw new UnsupportedOperationException("Clase no implementada aún");
     }
 
     @Override
-    String getEmail(Integer id) {
+    public String getEmail(Integer id) {
         throw new UnsupportedOperationException("Clase no implementada aún");
     }
 
     @Override
-    void updateEmail(Integer id, String email) {
+    public void updateEmail(Integer id, String email) {
         throw new UnsupportedOperationException("Clase no implementada aún");
     }
 
     @Override
-    void deleteEmail(Integer id) {
+    public void deleteEmail(Integer id) {
         throw new UnsupportedOperationException("Clase no implementada aún");
     }
 
     @Override
-    Integer createEmail(String email ) {
+    public Integer createEmail(String email ) {
         throw new UnsupportedOperationException("Clase no implementada aún");
     }
 }

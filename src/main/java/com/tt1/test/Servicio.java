@@ -1,5 +1,8 @@
 package com.tt1.test;
 
+import java.util.Date;
+import java.util.List;
+
 public class Servicio {
     private IMailer mailer;
     private IRepositorio repositorio;
@@ -9,15 +12,15 @@ public class Servicio {
         this.repositorio = repositorio;
     }
 
-    public crearTodo(String nombre, Date fechaLimite) {
+    public void crearTodo(String nombre, Date fechaLimite) {
         throw new UnsupportedOperationException("Clase no implementada aún");
     }
 
-    public agregarEmailAgenda(String email) {
+    public void agregarEmailAgenda(String email) {
         throw new UnsupportedOperationException("Clase no implementada aún");
     }
 
-    public finalizarTodo(String nombre) {
+    public void finalizarTodo(String nombre) {
         throw new UnsupportedOperationException("Clase no implementada aún");
     }
 
