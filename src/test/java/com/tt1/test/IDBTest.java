@@ -56,4 +56,36 @@ class IDBTest {
         assertTrue(todos.contains(t2));
         assertTrue(todos.contains(t3));
     }
+
+
+    // EMAILS
+    @Test
+    void email() {
+        String email = "user@email.com";
+
+        int id = db.createEmail(email);
+        assertEquals(email, db.getEmail(id));
+
+        db.updateEmail(id, "notuser@email.com");
+        assertEquals("notuser@email.com", db.getEmail(id));
+
+        db.deleteEmail(id);
+    }
+
+    @Test
+    void getEmails() {
+        int initial = db.getEmails().size();
+
+        db.createEmail("u1@email.com");
+        db.createEmail("u2@email.com");
+        db.createEmail("u3@email.com");
+
+        List<String> emails = db.getEmails();
+
+        assertEquals(3, emails.size() - initial);
+
+        assertTrue(emails.contains("u1@email.com"));
+        assertTrue(emails.contains("u2@email.com"));
+        assertTrue(emails.contains("u3@email.com"));
+    }
 }
