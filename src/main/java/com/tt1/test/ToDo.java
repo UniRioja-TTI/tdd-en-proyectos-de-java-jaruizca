@@ -3,43 +3,58 @@ package com.tt1.test;
 import java.util.Date;
 
 public class ToDo {
+    private Integer id;
+    private String nombre;
+    private String descripcion;
+    private Date fechaLimite;
+    private boolean completado;
+
+    public ToDo() {
+        id = 0;
+        nombre = "";
+        descripcion = "";
+        // Fecha límite inicial dentro de 2 semanas
+        fechaLimite = new Date(System.currentTimeMillis() + 86400 * 1000 * 14);
+        completado = false;
+    }
+
     public void setId(Integer id) {
-        throw new UnsupportedOperationException("Clase no implementada aún");
+        this.id = id;
     }
 
     public Integer getId() {
-        throw new UnsupportedOperationException("Clase no implementada aún");
+        return id;
     }
 
     public void setNombre(String nombre) {
-        throw new UnsupportedOperationException("Clase no implementada aún");
+        this.nombre = nombre;
     }
 
     public String getNombre() {
-        throw new UnsupportedOperationException("Clase no implementada aún");
+        return this.nombre;
     }
 
     public void setDescripcion(String descripcion) {
-        throw new UnsupportedOperationException("Clase no implementada aún");
+        this.descripcion = descripcion;
     }
 
     public String getDescripcion() {
-        throw new UnsupportedOperationException("Clase no implementada aún");
+        return descripcion;
     }
 
     public void setFechaLimite(Date fechaLimite) {
-        throw new UnsupportedOperationException("Clase no implementada aún");
+        this.fechaLimite = fechaLimite;
     }
 
     public Date getFechaLimite() {
-        throw new UnsupportedOperationException("Clase no implementada aún");
+        return fechaLimite;
     }
 
     public boolean getCompletado() {
-        throw new UnsupportedOperationException("Clase no implementada aún");
+        return completado;
     }
 
     public void setCompletado(boolean completado) {
-        throw new UnsupportedOperationException("Clase no implementada aún");
+        this.completado = completado;
     }
 }
