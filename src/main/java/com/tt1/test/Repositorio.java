@@ -3,27 +3,32 @@ package com.tt1.test;
 import java.util.List;
 
 public class Repositorio implements IRepositorio {
+    private final IDB db;
 
-    public Repositorio(IDB db) { }
+    public Repositorio(IDB db) {
+        this.db = db;
+    }
 
     public ToDo obtenerTodo(Integer i) {
-        throw new UnsupportedOperationException("Clase no implementada aún");
+        return db.getTodo(i);
     }
 
     public void marcarToDoComoCompletado(Integer i) {
-        throw new UnsupportedOperationException("Clase no implementada aún");
+        ToDo todo = db.getTodo(i);
+        todo.setCompletado(true);
+        db.updateTodo(i, todo);
     }
 
     public void guardarTodo(ToDo todo) {
-        throw new UnsupportedOperationException("Clase no implementada aún");
+        db.createTodo(todo);
     }
 
     public void guardarEmail(String email) {
-        throw new UnsupportedOperationException("Clase no implementada aún");
+        db.createEmail(email);
     }
 
     @Override
     public List<String> obtenerEmails() {
-        throw new UnsupportedOperationException("Clase no implementada aún");
+        return db.getEmails();
     }
 }
