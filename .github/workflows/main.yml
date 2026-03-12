@@ -3,23 +3,22 @@ name: Deploy Javadoc
 on:
   push:
     branches:
-      - stable   # Solo cuando se actualice la rama stable
-
-permissions:
-  contents: write   # Necesario para hacer push a gh-pages
+      - master
+      - main
 
 jobs:
-  publish-javadoc:
+  publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # if you have a protection rule on your repository, you'll need to give write permission to the workflow.
     steps:
-      - name: Checkout stable
-        uses: actions/checkout@v4
-
-      - name: Deploy javadoc to Github Pages
-        uses: dev-vince/actions-publish-javadoc@v1.0.1
+      - name: Deploy JavaDoc 🚀
+        uses: MathieuSoysal/Javadoc-publisher.yml@v3.0.2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          java-version: "21"          # Cambia si usas otra
-          java-distribution: "adopt"  # Ver opciones en setup-java
-          project: maven              # o gradle
-          branch: "gh-pages"          # rama donde se publicará el Javadoc
+          javadoc-branch: javadoc
+          java-version: 17
+          target-folder: docs # url will be https://<username>.github.io/<repo>/javadoc, This can be left as nothing to generate javadocs in the root folder.
+          project: maven # or gradle
+          custom-command: javadoc -d docs -sourcepath src/main/java com.tt1.test
+          # subdirectories: moduleA moduleB #for subdirectories support, needs to be run with custom command
