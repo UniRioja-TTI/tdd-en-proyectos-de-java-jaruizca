@@ -2,6 +2,9 @@ package com.tt1.test;
 
 import java.util.*;
 
+/**
+ * Simulación funcional de una BD
+ */
 public class DBStub implements IDB {
     private Map<Integer,ToDo> tablaTodos;
     private Map<Integer,String> agenda;
